@@ -1,0 +1,9 @@
+applications:
+- name: cooking
+  disk_quota: 1024M
+  host: cooking
+  command: node app.js
+  path: .
+  domain: mybluemix.net
+  instances: 1
+  memory: 256M

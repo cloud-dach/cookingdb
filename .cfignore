@@ -1,0 +1,5 @@
+# temporary files
+*.*~
+
+# Dependency directory
+node_modules
