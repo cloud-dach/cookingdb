@@ -1,18 +1,9 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 launchConfigurations/
 .git/
-=======
+
 # temporary files
 *.*~
 
 # Dependency directory
 node_modules
->>>>>>> e71ebfae4291c6fd9b2978afd384f2b3a62734b0
-=======
-# temporary files
-*.*~
-
-# Dependency directory
-node_modules
->>>>>>> e71ebfae4291c6fd9b2978afd384f2b3a62734b0

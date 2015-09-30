@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Cookingdb
 Simple web application that stores and displays recipes in a cloudant DB
 The project is intended to be deployed to any Cloud Foundry installation for example to Bluemix.
