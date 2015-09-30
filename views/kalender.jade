@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  p Ein Input Form?
+  form(name="input", action="/submit/form", method="post")
+    input(type="text", name="test")
+    input(type="submit", value="Submit") 
+    textarea(name="rezept", rows="20", cols="50", id="rezept")
+
+//  h1= title
+//  p Ein Input Form?
+//  input(type="text", name="rezept")
+//  p.buttons
+//    input(type="submit", value="Submit")

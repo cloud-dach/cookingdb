@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  p Bitte das Rezept editieren und auf Submit drücken.
+  form(name="rezepteingabe", action="/eingabe", method="post", enctype="multipart/form-data")
+    table(border=0)
+      tr
+        td Rezeptname
+        td 
+          input(name="name", size="50", id="name", value=doc.recipetitle)
+      tr
+        td Zutatenliste
+        td Rezept:
+      tr 
+        td 
+          textarea(name="ingredients", rows="30", cols="40", id="ingredients" ) #{doc.ingredients}
+        td 
+          textarea(name="rezept", rows="30", cols="40", id="rezept") #{doc.recipe}
+      tr
+        td
+          img(src=doc.img class="img-thumbnail" width="100" height="100")
+      tr
+        td Link zum Bild
+        td
+          input(type="file", name="bildpfad")
+    input(type="submit", value="Submit")
+  

@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1 #{doc.recipetitle}
+  // a(href='/e?id=#{doc._id}') zum editieren klicken
+  h3 Zutaten:
+  p !{doc.ingredients.replace(/\n?\r\n/g, '<br />')}
+  h3 Anleitung:
+  p !{doc.recipe.replace(/\n?\r\n/g, '<br />')}
+  h3 So siehts aus:
+  img(src=doc.img)
