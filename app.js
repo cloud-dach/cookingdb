@@ -124,6 +124,14 @@ app.get('/rezepte', function(req,res) {
 	res.render('rezepte', { title : 'Rezeptliste', list : body });
 	}); 
 });
+// a REST API !!
+app.get('/getrecipelist', function(req,res) {
+	var recipelist={};
+	db.list({include_docs:true}, function(err,body){
+	console.log(body);
+	res.json(body);
+	}); 
+});
 
 app.get ('/p', function(req,res) {
 	console.log(req.query.id);
