@@ -84,17 +84,25 @@ app.use('/users', users);
 
 app.post('/eingabe', function(req,res) {
 	console.log(req.body.name);
-	console.log(req.files);	
+	// console.log(req.files);	
 	var recipetitle=req.body.name;
 	var ingredients=req.body.ingredients;
 	var recipe=req.body.rezept;
-	var image=req.files.bildpfad.path;
-	var data=fs.readFileSync(image);
-	var uristring = new Buffer(data).toString('base64');
-	var base64uri='data:image/jpeg;base64,';	
-	base64uri+=uristring;
+	if (typeof req.files.bildpfad ==='undefined') {
+		// No Image is added to the new recipe
+		var newreciperecord={'recipetitle':recipetitle, 'ingredients':ingredients, 'recipe':recipe};
+	} else {
+		// An Image was added to the recipe
+		var image=req.files.bildpfad.path;
+		var data=fs.readFileSync(image);
+		var uristring = new Buffer(data).toString('base64');
+		var base64uri='data:image/jpeg;base64,';	
+		base64uri+=uristring;
 
-	var newreciperecord={'recipetitle':recipetitle, 'ingredients':ingredients, 'recipe':recipe, 'img':base64uri};
+		var newreciperecord={'recipetitle':recipetitle, 'ingredients':ingredients, 'recipe':recipe, 'img':base64uri};	
+		
+	}
+	
 	db.insert(newreciperecord, function(err,body,header){
 		if (!err) {
 			console.log('name: ' + req.param('name') + req.param('ingredients') + req.param('rezept'));
