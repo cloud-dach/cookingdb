@@ -8,4 +8,5 @@ block content
   h3 Anleitung:
   p !{doc.recipe.replace(/\n?\r\n/g, '<br />')}
   h3 So siehts aus:
-  img(src=doc.img)
+  // img(src=doc.img class="img-rounded" border-radius="12px")
+  img.img-rounded(src=doc.img border-radius="200px")
