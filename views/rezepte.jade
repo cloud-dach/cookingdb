@@ -4,8 +4,16 @@ block content
   h1 #{title}
   
   p Eine einfache Liste bisher eingegebener Rezepte. 
-  each row in list.rows
-    li
-      a(href='/p?id=#{row.doc._id}') #{row.doc.recipetitle}
-      img(src=row.doc.img class="img-circle img-thumbnail" width="100" height="100")
+  table.table.table-striped
+    thead
+      tr
+        th Rezept
+    tbody
+
+      each row in list.rows 
+        tr
+          td 
+            a(href='/p?id=#{row.doc._id}') #{row.doc.recipetitle}
+          td 
+            img(src=row.doc.img class="img-circle img-thumbnail" width="100" height="100")
     
